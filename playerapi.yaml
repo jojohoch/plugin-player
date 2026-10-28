@@ -352,7 +352,7 @@ components:
             ]
         currentPage:
           description: Id of the page currently presented. This id is taken from the list of valid pages. If the
-            paging mode is 'concat-scroll', the first page with parts in view port is taken as current page.
+            paging mode is 'CONCAT_SCROLL', the first page with parts in view port is taken as current page.
           type: string
           example: 'p3'
         sharedParameters:
@@ -390,15 +390,15 @@ components:
           example: 'NONE'
         responseProgress:
           description: This reports the progress of responding. The host can enable or disable the navigation to the
-            next unit depending on that value. The value 'complete' announces not only that all required responses are
-            given but that these responses are valid too. The value 'complete' can be sent even not all responses are
+            next unit depending on that value. The value 'COMPLETE' announces not only that all required responses are
+            given but that these responses are valid too. The value 'COMPLETE' can be sent even not all responses are
             given - the host is interested only in REQUIRED responses. So make sure to mark all response elements
             correctly corresponding to this behaviour.
           type: string
           enum:
             - NONE
             - SOME
-            - complete
+            - COMPLETE
           example: 'SOME'
         unitStateDataType:
           type: string
