@@ -113,7 +113,7 @@ Sollte dies nicht der Fall sein, sollte der Player fehlende oder falsche Antwort
 Die Nachricht `vopNavigationDeniedNotification` des Hosts ist also als Aufforderung an den Player zu verstehen, fehlende oder falsche Eingaben visuell darzustellen. Technisch kann das bei Angular Material z. B. über `markAllAsTouched()` gehen. Parameter:
 
 * `sessionId`: Die Kennung aus dem Start-Kommando, um die korrekte Zuordnung der Nachricht bzw. der darin enthaltenen Daten zur Unit zu unterstützen.
-* `reason`: Hinweis für den Player, warum die Navigation verweigert wurde: `presentationIncomplete` und/oder `responsesIncomplete`.
+* `reason`: Hinweis für den Player, warum die Navigation verweigert wurde: `PRESENTATION_INCOMPLETE` und/oder `RESPONSES_INCOMPLETE`.
 
 ## 8 Player Config Changed Notification
 
@@ -203,7 +203,7 @@ Das Start-Kommando hat die Message-Id `vopStartCommand`.
 
 Die UI-Definition der Unit `unitDefinition` beschreibt das Erscheinungsbild der Unit und ggf. die Interaktionselemente.
 
-> Beispiel: Bei einem Player für einen basalen Lesegeschwindigkeitstest besteht die Unit-Definition nur aus einem Text, der durch die Testperson gelesen werden soll, und dann soll einer von zwei Buttons geklickt werden -- "JA" oder "NEIN". So ein Text heißt z. B. "Eis ist warm". Als Antwort wird die Kennung des Buttons -- "A" oder "B" -- geliefert sowie die Zeit in Millisekunden, die von der Präsentation der Unit (entspricht der Bereitschaftsmeldung des Players) bis zum Klicken eines Buttons vergangen ist. Mit dem Klick wird auch gleich eine Anforderung für eine Unit-Navigation "next" abgeschickt. Dieser spezialisierte Player benötigt aufgrund umfangreicher Konventionen nur den Text als Unit-Definition.
+> Beispiel: Bei einem Player für einen basalen Lesegeschwindigkeitstest besteht die Unit-Definition nur aus einem Text, der durch die Testperson gelesen werden soll, und dann soll einer von zwei Buttons geklickt werden -- "JA" oder "NEIN". So ein Text heißt z. B. "Eis ist warm". Als Antwort wird die Kennung des Buttons -- "A" oder "B" -- geliefert sowie die Zeit in Millisekunden, die von der Präsentation der Unit (entspricht der Bereitschaftsmeldung des Players) bis zum Klicken eines Buttons vergangen ist. Mit dem Klick wird auch gleich eine Anforderung für eine Unit-Navigation `NEXT` abgeschickt. Dieser spezialisierte Player benötigt aufgrund umfangreicher Konventionen nur den Text als Unit-Definition.
 
 Häufig wird es sich bei der Unit-Definition um ein Datenobjekt handeln, das z. B. über `JSON.stringify()` serialisiert wurde. Die Komplexität der übergebenen Daten ist nicht bestimmbar und aus Sicht der Verona-Spezifikationen auch egal. Der Player wird die Datenstruktur wieder zu einem Datenobjekt transformieren, prüfen und auswerten.
 

@@ -161,8 +161,8 @@ channels:
               items:
                 type: string
                 enum:
-                  - presentationIncomplete
-                  - responsesIncomplete
+                  - PRESENTATION_INCOMPLETE
+                  - RESPONSES_INCOMPLETE
           required:
             - sessionId
 
@@ -280,7 +280,7 @@ components:
           type: string
           format: byte
           description: Some information to specify the event.
-          example: '{"unitId": "M24093EX", "reason": "responsesIncomplete"}'
+          example: '{"unitId": "M24093EX", "reason": "RESPONSES_INCOMPLETE"}'
       required:
         - timeStamp
         - key
